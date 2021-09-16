@@ -1,0 +1,23 @@
+#!/bin/python3
+
+import os
+
+
+try:
+	from termcolor import colored
+	from random_words import RandomWords
+except ImportError:
+	print("Please install required python modules !\nUse --> pip install -r requirements.txt")
+	exit(1)
+
+
+if __name__== '__main__':
+	rw = RandomWords()
+	word = ""
+	var = ""
+	while var != "stop":
+		word = rw.random_word()
+		while var != word and var != "stop":
+			print(colored(word, 'red'))
+			var = str(input())
+	os.system('clear')
